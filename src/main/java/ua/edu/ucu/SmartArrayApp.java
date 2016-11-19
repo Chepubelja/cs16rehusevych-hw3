@@ -14,6 +14,8 @@ import java.util.Arrays;
 
 public class SmartArrayApp {
     private MyPredicate myPredicate;
+    private static int a = 4;
+    private static int b = 2;
     public static Integer[]
             filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
 
@@ -62,13 +64,13 @@ public class SmartArrayApp {
         MyPredicate checkOne = new MyPredicate() {
             @Override
             public boolean test(Object t) {
-                return ((Student) t).getYear() == 2;
+                return ((Student) t).getYear() == b;
             }
         };
         MyPredicate checkTwo = new MyPredicate() {
             @Override
             public boolean test(Object t) {
-                return ((Student) t).getGPA() >= 4;
+                return ((Student) t).getGPA() >= a;
             }
         };
         MyComparator comp = new MyComparator() {
