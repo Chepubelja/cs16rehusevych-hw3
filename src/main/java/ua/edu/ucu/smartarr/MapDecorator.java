@@ -3,8 +3,8 @@ package ua.edu.ucu.smartarr;
 import ua.edu.ucu.functions.MyFunction;
 
 // Map every element to another object using MyFunction
-public class MapDecorator extends SmartArrayDecorator{
-    protected MyFunction myFunction;
+public class MapDecorator extends SmartArrayDecorator {
+    private MyFunction myFunction;
     public MapDecorator(SmartArray smartArray, MyFunction myFunction) {
         super(smartArray);
         this.myFunction = myFunction;
@@ -12,7 +12,7 @@ public class MapDecorator extends SmartArrayDecorator{
 
     public Object[] toArray() {
         Object[] mapped = new Object[size()];
-        for (int i = 0; i < size(); i++){
+        for (int i = 0; i < size(); i++) {
             mapped[i] = myFunction.apply(smartArray.toArray()[i]);
         }
         return mapped;

@@ -1,14 +1,14 @@
 package ua.edu.ucu.smartarr;
 
 // Base array for decorators
-public class BaseArray implements SmartArray{
-    protected Object[] array1;
-    public BaseArray(Object[] array1){
-        this.array1 = array1;
+public class BaseArray implements SmartArray {
+    private Object[] arrayOne;
+    public BaseArray(Object[] arrayOne) {
+        this.arrayOne = arrayOne;
     }
 
     public Object[] toArray() {
-        return array1;
+        return arrayOne;
     }
 
     public String operationDescription() {
@@ -16,7 +16,7 @@ public class BaseArray implements SmartArray{
     }
 
     public int size() {
-        return array1.length;
+        return arrayOne.length;
     }
 
 }

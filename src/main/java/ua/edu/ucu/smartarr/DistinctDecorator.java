@@ -1,7 +1,7 @@
 package ua.edu.ucu.smartarr;
 
 // Remove duplicates from SmartArray. Use method equals() to compare objects
-public class DistinctDecorator extends SmartArrayDecorator{
+public class DistinctDecorator extends SmartArrayDecorator {
     public DistinctDecorator(SmartArray smartArray) {
         super(smartArray);
     }
@@ -10,15 +10,15 @@ public class DistinctDecorator extends SmartArrayDecorator{
         Object[] distincted = new Object[size()];
         boolean already;
         int counter = 0;
-        for (int i = 0; i < smartArray.size(); i++){
+        for (int i = 0; i < smartArray.size(); i++) {
             already = false;
-            for (int k = i+1; k < smartArray.size(); k++){
+            for (int k = i+1; k < smartArray.size(); k++) {
                 if (smartArray.toArray()[i].equals(smartArray.toArray()[k])) {
                     already = true;
                     break;
                 }
             }
-            if (!already){
+            if (!already) {
                 distincted[counter] = smartArray.toArray()[i];
                 counter++;
             }
@@ -31,15 +31,15 @@ public class DistinctDecorator extends SmartArrayDecorator{
     }
 
     public int size() {
-        int new_size = smartArray.size();
+        int newSize = smartArray.size();
         for (int k = 0; k < smartArray.size()-1; k++) {
-            for(int j = k + 1; j < smartArray.size(); j++){
-                if (smartArray.toArray()[k].equals(smartArray.toArray()[j])){
-                    new_size--;
+            for(int j = k + 1; j < smartArray.size(); j++) {
+                if (smartArray.toArray()[k].equals(smartArray.toArray()[j])) {
+                    newSize--;
                     break;
                 }
             }
         }
-        return new_size;
+        return newSize;
     }
 }

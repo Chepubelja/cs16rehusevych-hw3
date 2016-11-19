@@ -5,12 +5,12 @@ import ua.edu.ucu.smartarr.*;
 
 import java.util.Arrays;
 
-public class Main{
-public static void main(String[]args){
+public class Main {
+public static void main(String[]args) {
 
     Integer[] integers = {-1, 2, 0, 1, -5, 3};
     SmartArray sa = new BaseArray(integers);
-    MyFunction func = new MyFunction(){
+    MyFunction func = new MyFunction() {
         @Override
         public Object apply(Object t) {
             return 2 * ((Integer) t);
@@ -20,27 +20,27 @@ public static void main(String[]args){
     sa = new MapDecorator(sa, func);
     System.out.println(Arrays.toString(sa.toArray()));
 
-    Integer[] integers1 = {-1, 2, 0, 1, -5, 3};
-    SmartArray sa1 = new BaseArray(integers1);
+    Integer[] integersOne = {-1, 2, 0, 1, -5, 3};
+    SmartArray saOne = new BaseArray(integersOne);
     MyPredicate pr = new MyPredicate() {
         @Override
         public boolean test(Object t) {
             return ((Integer) t) > 0;
         }
     };
-    sa1 = new FilterDecorator(sa1, pr);
-    System.out.println(Arrays.toString(sa1.toArray()));
+    saOne = new FilterDecorator(saOne, pr);
+    System.out.println(Arrays.toString(saOne.toArray()));
 
-    Integer[] integers2 = {-1, 2, 0, 1, -5, 3};
-    SmartArray sa2 = new BaseArray(integers2);
+    Integer[] integersTwo = {-1, 2, 0, 1, -5, 3};
+    SmartArray saTwo = new BaseArray(integersTwo);
     MyComparator cmp = new MyComparator() {
         @Override
-        public int compare(Object o1, Object o2) {
-            return ((Integer) o1) - ((Integer) o2);
+        public int compare(Object oOne, Object oTwo) {
+            return ((Integer) oOne) - ((Integer) oTwo);
         }
     };
-    sa2 = new SortDecorator(sa2, cmp);
-    System.out.println(Arrays.toString(sa2.toArray()));
+    saTwo = new SortDecorator(saTwo, cmp);
+    System.out.println(Arrays.toString(saTwo.toArray()));
 
 //
 //    MyFunction func1 = new MyPredicate(){
@@ -50,7 +50,5 @@ public static void main(String[]args){
 //        }
 //    };
 //
-
-
-
-}}
+    }
+}

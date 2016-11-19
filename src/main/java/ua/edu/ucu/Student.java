@@ -35,14 +35,16 @@ class Student {
 
     @Override
     public String toString() {
-        return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
+        return "Student{name=" + name + ", surname=" +
+                surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
     }
 
     public boolean equals(Object stud) {
-        return (stud instanceof Student) && (Objects.equals(((Student) stud).getSurname(), getSurname())) &&
-                (Objects.equals(((Student) stud).getName(), getName())) &&
-                (((Student) stud).getGPA() == getGPA()) &&
-                (((Student) stud).getYear() == getYear());
+        return (stud instanceof Student)
+                && (Objects.equals(((Student) stud).getSurname(), getSurname()))
+                && (Objects.equals(((Student) stud).getName(), getName()))
+                && (((Student) stud).getGPA() == getGPA())
+                && (((Student) stud).getYear() == getYear());
     }
 
 }
