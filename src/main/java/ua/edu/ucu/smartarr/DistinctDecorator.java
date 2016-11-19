@@ -33,7 +33,7 @@ public class DistinctDecorator extends SmartArrayDecorator {
     public int size() {
         int newSize = smartArray.size();
         for (int k = 0; k < smartArray.size()-1; k++) {
-            for(int j = k + 1; j < smartArray.size(); j++) {
+            for (int j = k + 1; j < smartArray.size(); j++) {
                 if (smartArray.toArray()[k].equals(smartArray.toArray()[j])) {
                     newSize--;
                     break;

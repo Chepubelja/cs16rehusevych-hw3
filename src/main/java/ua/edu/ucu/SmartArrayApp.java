@@ -13,7 +13,7 @@ import ua.edu.ucu.smartarr.SortDecorator;
 import java.util.Arrays;
 
 public class SmartArrayApp {
-    protected MyPredicate myPredicate;
+    private MyPredicate myPredicate;
     public static Integer[]
             filterPositiveIntegersSortAndMultiplyBy2(Integer[] integers) {
 
@@ -56,8 +56,8 @@ public class SmartArrayApp {
         return Arrays.copyOf(result, result.length, Integer[].class);
     }
     public static String[]
-            findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname
-            (Student[] students) {
+            findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(
+            Student[] students) {
         SmartArray sa = new BaseArray(students);
         MyPredicate checkOne = new MyPredicate() {
             @Override
@@ -74,8 +74,8 @@ public class SmartArrayApp {
         MyComparator comp = new MyComparator() {
             @Override
             public int compare(Object oOne, Object oTwo) {
-                return (((Student) oOne).getSurname().compareTo
-                        (((Student) oTwo).getSurname()));
+                return (((Student) oOne).getSurname().compareTo(
+                        ((Student) oTwo).getSurname()));
             }
         };
         MyFunction func = new MyFunction() {
